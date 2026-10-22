@@ -7,8 +7,7 @@ navy-and-green identity.
 
 **Phase 1 scope:** a responsive visual redesign — Home, Services (Residential / Commercial),
 About, and Contact — built from all of the content on the original strongservicesusa.com,
-with an English/Spanish toggle. The contact form is a styled UI placeholder (not yet wired
-to a backend).
+with an English/Spanish toggle.
 
 ## Tech Stack
 
@@ -36,6 +35,16 @@ src/
 └── pages/              # Home, Services, About, Contact
 public/images/          # Logo, favicon, and job photos from the original site
 ```
+
+## Contact Form
+
+The contact form sends submissions through [Web3Forms](https://web3forms.com) — no backend
+needed. Messages are emailed to whichever address the access key was created for.
+
+1. Create an access key at web3forms.com using the inbox that should receive inquiries.
+2. Copy `.env.example` to `.env.local` and set `VITE_WEB3FORMS_ACCESS_KEY`.
+3. Add the same variable in the hosting provider's environment settings (Netlify/Vercel)
+   and redeploy — Vite bakes it in at build time.
 
 ## Editing Content
 
