@@ -101,14 +101,11 @@ const en = {
         { label: 'Commercial', to: '/services#commercial' },
       ],
     },
+    { label: 'Portfolio', to: '/portfolio' },
     { label: 'About Us', to: '/about' },
     { label: 'Contact Us', to: '/contact' },
   ],
 
-  utility: {
-    available: 'Available 24/7',
-    license: 'License #',
-  },
 
   hero: {
     eyebrow: 'Family-Owned · Miami, FL',
@@ -305,6 +302,64 @@ const en = {
     },
   },
 
+  portfolio: {
+    eyebrow: 'Our Work',
+    heading: 'Projects we’re proud of',
+    subtitle:
+      'A look at the commercial refrigeration, air conditioning, and service work our team delivers across South Florida.',
+    categories: ['All', 'Commercial Refrigeration', 'Commercial AC', 'Cooling Towers', 'Service & Repair'],
+    empty: 'No projects in this category yet — check back soon.',
+    // Photos are real Strong Services USA jobs from the original site.
+    // Titles/descriptions describe what each photo shows; add locations and
+    // dates once the client confirms them.
+    projects: [
+      {
+        id: 'rooftop-crane-lift',
+        image: '/images/hero.jpg',
+        title: 'Rooftop Refrigeration Unit Crane Lift',
+        category: 'Commercial Refrigeration',
+        description:
+          'Craning a large commercial refrigeration unit onto its rooftop rails and guiding it into place.',
+      },
+      {
+        id: 'rooftop-condensing-unit',
+        image: '/images/rooftop-unit.jpg',
+        title: 'Rooftop Condensing Unit Installation',
+        category: 'Commercial Refrigeration',
+        description:
+          'A commercial condensing unit installed on an elevated rooftop stand, piped and ready for service.',
+      },
+      {
+        id: 'unit-staging',
+        image: '/images/unit-sunset.jpg',
+        title: 'Commercial Unit Staging',
+        category: 'Commercial Refrigeration',
+        description: 'A new refrigeration unit staged on site and prepared for installation.',
+      },
+      {
+        id: 'carrier-rtu',
+        image: '/images/carrier-install.jpg',
+        title: 'Carrier WeatherMaker Rooftop Unit',
+        category: 'Commercial AC',
+        description: 'Setting and connecting a Carrier WeatherMaker packaged rooftop unit for a commercial client.',
+      },
+      {
+        id: 'cooling-tower-piping',
+        image: '/images/cooling-tower.jpg',
+        title: 'Cooling Tower Piping',
+        category: 'Cooling Towers',
+        description: 'Supply and return piping between cooling towers, color-coded for clear, safe maintenance.',
+      },
+      {
+        id: 'on-site-diagnosis',
+        image: '/images/technician.jpg',
+        title: 'On-Site Diagnosis & Repair',
+        category: 'Service & Repair',
+        description: 'One of our technicians diagnosing a unit on site — we stay until the job is done right.',
+      },
+    ],
+  },
+
   about: {
     eyebrow: 'About Us',
     heading: 'Professional Air Conditioning and Refrigeration Contractor',
@@ -431,14 +486,11 @@ const es = {
         { label: 'Comercial', to: '/services#commercial' },
       ],
     },
+    { label: 'Portafolio', to: '/portfolio' },
     { label: 'Nosotros', to: '/about' },
     { label: 'Contacto', to: '/contact' },
   ],
 
-  utility: {
-    available: 'Disponibles 24/7',
-    license: 'Licencia #',
-  },
 
   hero: {
     eyebrow: 'Empresa Familiar · Miami, FL',
@@ -640,6 +692,61 @@ const es = {
       heading: 'Certificados para trabajar con el Programa Ygrene',
       body: 'Nuestra empresa está certificada y aprobada para trabajar con el Programa Ygrene. Este programa ayuda a propietarios de viviendas y negocios a reemplazar sus equipos por unos nuevos y más eficientes, ofreciendo una forma más accesible de financiar sus mejoras.',
     },
+  },
+
+  portfolio: {
+    eyebrow: 'Nuestro Trabajo',
+    heading: 'Proyectos de los que estamos orgullosos',
+    subtitle:
+      'Un vistazo a los trabajos de refrigeración comercial, aire acondicionado y servicio que nuestro equipo realiza en el sur de la Florida.',
+    categories: ['Todos', 'Refrigeración Comercial', 'A/C Comercial', 'Torres de Enfriamiento', 'Servicio y Reparación'],
+    empty: 'Aún no hay proyectos en esta categoría — vuelva pronto.',
+    projects: [
+      {
+        id: 'rooftop-crane-lift',
+        image: '/images/hero.jpg',
+        title: 'Izado con Grúa de Unidad de Refrigeración',
+        category: 'Refrigeración Comercial',
+        description:
+          'Subiendo con grúa una gran unidad de refrigeración comercial a sus rieles en el techo y guiándola a su lugar.',
+      },
+      {
+        id: 'rooftop-condensing-unit',
+        image: '/images/rooftop-unit.jpg',
+        title: 'Instalación de Unidad Condensadora en Techo',
+        category: 'Refrigeración Comercial',
+        description:
+          'Unidad condensadora comercial instalada sobre una base elevada en el techo, conectada y lista para servicio.',
+      },
+      {
+        id: 'unit-staging',
+        image: '/images/unit-sunset.jpg',
+        title: 'Preparación de Unidad Comercial',
+        category: 'Refrigeración Comercial',
+        description: 'Una nueva unidad de refrigeración ubicada en el sitio y preparada para su instalación.',
+      },
+      {
+        id: 'carrier-rtu',
+        image: '/images/carrier-install.jpg',
+        title: 'Unidad de Techo Carrier WeatherMaker',
+        category: 'A/C Comercial',
+        description: 'Instalación y conexión de una unidad de techo Carrier WeatherMaker para un cliente comercial.',
+      },
+      {
+        id: 'cooling-tower-piping',
+        image: '/images/cooling-tower.jpg',
+        title: 'Tubería de Torres de Enfriamiento',
+        category: 'Torres de Enfriamiento',
+        description: 'Tuberías de suministro y retorno entre torres de enfriamiento, codificadas por color para un mantenimiento claro y seguro.',
+      },
+      {
+        id: 'on-site-diagnosis',
+        image: '/images/technician.jpg',
+        title: 'Diagnóstico y Reparación en Sitio',
+        category: 'Servicio y Reparación',
+        description: 'Uno de nuestros técnicos diagnosticando un equipo en sitio — no nos vamos hasta dejarlo bien.',
+      },
+    ],
   },
 
   about: {
