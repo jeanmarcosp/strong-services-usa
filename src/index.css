@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-navy-900 font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Leave room for the sticky header when jumping to #residential / #commercial. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-green-600 text-white hover:bg-green-500 focus-visible:ring-green-600;
+  }
+
+  .btn-secondary {
+    @apply btn bg-navy-800 text-white hover:bg-navy-700 focus-visible:ring-navy-800;
+  }
+
+  .btn-outline {
+    @apply btn border border-white/30 text-white hover:bg-white/10 focus-visible:ring-white;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-green-600;
+  }
+
+  /* Soft "cool air" glow used on dark sections (replaces UCG's blueprint grid). */
+  .airflow {
+    background-image: repeating-linear-gradient(
+      -35deg,
+      rgba(255, 255, 255, 0.035) 0,
+      rgba(255, 255, 255, 0.035) 2px,
+      transparent 2px,
+      transparent 28px
+    );
+  }
+}
