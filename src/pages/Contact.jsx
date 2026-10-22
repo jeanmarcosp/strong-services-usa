@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock, Headset } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 import ContactForm from '../components/ContactForm'
 import { business } from '../data/content'
@@ -27,26 +27,7 @@ export default function Contact() {
       <section className="section">
         <div className="container grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            {/* Need a professional? */}
-            <div className="rounded-3xl bg-navy-900 p-8 text-white">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500/20 text-green-300">
-                <Headset className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <h2 className="mt-5 text-2xl font-extrabold">
-                {c.needPro} <span className="text-green-400">{c.weCanHelp}</span>
-              </h2>
-              <p className="mt-3 text-navy-200">
-                {c.callLead}{' '}
-                <a href={business.phoneHref} className="font-semibold text-white underline decoration-green-400 underline-offset-4">
-                  {business.phone}
-                </a>{' '}
-                {c.callTail}
-              </p>
-              <p className="mt-3 text-navy-200">{c.references}</p>
-              <p className="mt-3 text-sm font-semibold text-green-300">{c.area}</p>
-            </div>
-
-            <div className="mt-8 space-y-6">
+            <div className="space-y-6">
               {details.map(({ icon: Icon, label, value, href }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-green-50 text-green-700">
