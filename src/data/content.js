@@ -38,16 +38,18 @@ export const business = {
   email: 'Info@StrongServicesUSA.com',
   emailHref: 'mailto:Info@StrongServicesUSA.com',
   address: {
-    line1: '13816 SW 142 Ave, Suite #33',
+    line1: '13810 SW 142 Ave, Suite #38',
     city: 'Miami',
     state: 'FL',
     zip: '33186',
   },
+  // Searching by business name + address opens the Google Business listing, not a bare pin.
   mapUrl:
-    'https://www.google.com/maps/search/?api=1&query=13816+SW+142+Ave+Suite+33+Miami+FL+33186',
-  // Interactive map embed (no API key required).
+    'https://www.google.com/maps/search/?api=1&query=Strong+Services+USA+13810+SW+142+Ave+Suite+38+Miami+FL+33186',
+  // Interactive map embed (no API key required). From Google Maps → the business
+  // listing → Share → Embed a map, so it shows the listing's name and info card.
   mapEmbedUrl:
-    'https://maps.google.com/maps?q=13816%20SW%20142%20Ave%20Suite%2033%20Miami%20FL%2033186&output=embed',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.9754981025794!2d-80.4230326!3d25.638938699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c18f2fb797b5%3A0x4933b022a581abf2!2sStrong%20Services%20USA!5e0!3m2!1sen!2sus!4v1792715970700!5m2!1sen!2sus',
   facebook: 'https://www.facebook.com/strongservicesusa/',
   counties: ['Miami-Dade', 'Broward', 'Palm Beach'],
 }

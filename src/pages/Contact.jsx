@@ -58,7 +58,7 @@ export default function Contact() {
                 className="aspect-[16/10] w-full"
                 style={{ border: 0 }}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               />
             </div>
