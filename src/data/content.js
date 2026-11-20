@@ -24,6 +24,7 @@ import {
   Users,
   Warehouse,
   Wrench,
+  Zap,
 } from 'lucide-react'
 
 // ---------------------------------------------------------------------------
@@ -32,7 +33,12 @@ import {
 export const business = {
   name: 'Strong Services USA',
   yearsInBusiness: 30,
-  license: 'CAC1817892',
+  // Florida MEP licenses. Labels for each type live in `licenseTypes` (en/es).
+  licenses: {
+    mechanical: 'CAC1817892',
+    electrical: 'EC13016805',
+    plumbing: 'CFC1435001',
+  },
   phone: '(305) 267-4960',
   phoneHref: 'tel:+13052674960',
   email: 'Info@StrongServicesUSA.com',
@@ -72,6 +78,11 @@ const ICONS = {
   'supermarket-restaurant': Store,
   'walk-in': Refrigerator,
   'water-chillers': Droplets,
+  // Trades
+  'trade-ac': AirVent,
+  'trade-refrigeration': Snowflake,
+  'trade-electrical': Zap,
+  'trade-plumbing': Droplets,
 }
 const withIcons = (list) => list.map((s) => ({ ...s, icon: ICONS[s.slug] }))
 
@@ -90,8 +101,10 @@ const years = `${business.yearsInBusiness}+`
 // English
 // ---------------------------------------------------------------------------
 const en = {
-  tagline: 'Refrigeration and air conditioning specialists serving South Florida.',
+  tagline: 'Licensed A/C, refrigeration, electrical, and plumbing contractor serving South Florida.',
   serviceArea: 'Miami-Dade · Broward · Palm Beach',
+
+  licenseTypes: { mechanical: 'Mechanical', electrical: 'Electrical', plumbing: 'Plumbing' },
 
   nav: [
     { label: 'Home', to: '/' },
@@ -110,7 +123,7 @@ const en = {
 
 
   hero: {
-    eyebrow: 'Family-Owned · Miami, FL',
+    eyebrow: 'Family-Owned · Licensed MEP · Miami, FL',
     headlineLead: 'Turn to Us for Your',
     headlineAccent: 'Refrigeration and Air Conditioning Needs',
     body: 'If you need help with your residential or commercial AC and refrigeration units, turn to Strong Services USA in Miami, FL. We are a family-owned professional air conditioning and refrigeration company that has been in business for more than 30 years.',
@@ -124,9 +137,41 @@ const en = {
   trustPoints: withTrustIcons([
     { label: 'Family-Owned' },
     { label: `${years} Years Experience` },
-    { label: `License ${business.license}` },
+    { label: 'Licensed MEP Contractor' },
     { label: 'Available 24/7' },
   ]),
+
+  trades: {
+    eyebrow: 'Licensed MEP Contractor',
+    heading: 'Four trades. One trusted team.',
+    body: 'Strong Services USA holds all three Florida MEP licenses — mechanical, electrical, and plumbing — so one company can take care of your air conditioning, refrigeration, electrical, and plumbing needs.',
+    items: withIcons([
+      {
+        slug: 'trade-ac',
+        title: 'Air Conditioning',
+        summary: 'Residential and commercial AC service, maintenance, and installation.',
+        license: 'mechanical',
+      },
+      {
+        slug: 'trade-refrigeration',
+        title: 'Refrigeration',
+        summary: 'Walk-in coolers and freezers, ice machines, chillers, and commercial refrigeration.',
+        license: 'mechanical',
+      },
+      {
+        slug: 'trade-electrical',
+        title: 'Electrical',
+        summary: 'Licensed electrical work for homes and businesses.',
+        license: 'electrical',
+      },
+      {
+        slug: 'trade-plumbing',
+        title: 'Plumbing',
+        summary: 'Licensed plumbing service for homes and businesses.',
+        license: 'plumbing',
+      },
+    ]),
+  },
 
   intro: {
     eyebrow: 'Who We Are',
@@ -196,7 +241,7 @@ const en = {
     eyebrow: 'Our Credentials',
     heading: 'Licensed, insured, and ready for any job',
     body: 'Our company has all the necessary licenses and insurance to perform any kind of job. For us, no job is too big or too small. We are open to new residential, commercial, and industrial customers.',
-    licenseLabel: 'State License',
+    licenseLabel: 'State Licenses',
     points: ['Fully licensed and insured', 'Residential, commercial & industrial', 'No job too big or too small'],
   },
 
@@ -416,7 +461,7 @@ const en = {
     },
     credentials: {
       years: 'Years in Business',
-      license: 'State License',
+      license: 'Fully Licensed',
       area: 'Counties Served',
       areaValue: '3',
     },
@@ -469,7 +514,7 @@ const en = {
     serviceArea: 'Service Area',
     followUs: 'Follow us on Facebook',
     rightsReserved: 'All rights reserved.',
-    license: 'License #',
+    license: 'State Licenses',
     available: 'Available 24/7',
   },
 }
@@ -478,8 +523,10 @@ const en = {
 // Spanish
 // ---------------------------------------------------------------------------
 const es = {
-  tagline: 'Especialistas en refrigeración y aire acondicionado al servicio del sur de la Florida.',
+  tagline: 'Contratista licenciado de aire acondicionado, refrigeración, electricidad y plomería en el sur de la Florida.',
   serviceArea: 'Miami-Dade · Broward · Palm Beach',
+
+  licenseTypes: { mechanical: 'Mecánica', electrical: 'Eléctrica', plumbing: 'Plomería' },
 
   nav: [
     { label: 'Inicio', to: '/' },
@@ -498,7 +545,7 @@ const es = {
 
 
   hero: {
-    eyebrow: 'Empresa Familiar · Miami, FL',
+    eyebrow: 'Empresa Familiar · MEP Licenciado · Miami, FL',
     headlineLead: 'Cuente con Nosotros para Sus',
     headlineAccent: 'Necesidades de Refrigeración y Aire Acondicionado',
     body: 'Si necesita ayuda con sus equipos de aire acondicionado y refrigeración residenciales o comerciales, cuente con Strong Services USA en Miami, FL. Somos una empresa familiar de aire acondicionado y refrigeración con más de 30 años en el negocio.',
@@ -512,9 +559,41 @@ const es = {
   trustPoints: withTrustIcons([
     { label: 'Empresa Familiar' },
     { label: `${years} Años de Experiencia` },
-    { label: `Licencia ${business.license}` },
+    { label: 'Contratista MEP Licenciado' },
     { label: 'Disponibles 24/7' },
   ]),
+
+  trades: {
+    eyebrow: 'Contratista MEP Licenciado',
+    heading: 'Cuatro oficios. Un solo equipo de confianza.',
+    body: 'Strong Services USA cuenta con las tres licencias MEP de la Florida — mecánica, eléctrica y plomería — para que una sola empresa se encargue de su aire acondicionado, refrigeración, electricidad y plomería.',
+    items: withIcons([
+      {
+        slug: 'trade-ac',
+        title: 'Aire Acondicionado',
+        summary: 'Servicio, mantenimiento e instalación de aire acondicionado residencial y comercial.',
+        license: 'mechanical',
+      },
+      {
+        slug: 'trade-refrigeration',
+        title: 'Refrigeración',
+        summary: 'Cuartos fríos y congeladores walk-in, máquinas de hielo, chillers y refrigeración comercial.',
+        license: 'mechanical',
+      },
+      {
+        slug: 'trade-electrical',
+        title: 'Electricidad',
+        summary: 'Trabajos eléctricos con licencia para hogares y negocios.',
+        license: 'electrical',
+      },
+      {
+        slug: 'trade-plumbing',
+        title: 'Plomería',
+        summary: 'Servicio de plomería con licencia para hogares y negocios.',
+        license: 'plumbing',
+      },
+    ]),
+  },
 
   intro: {
     eyebrow: 'Quiénes Somos',
@@ -584,7 +663,7 @@ const es = {
     eyebrow: 'Nuestras Credenciales',
     heading: 'Licenciados, asegurados y listos para cualquier trabajo',
     body: 'Nuestra empresa cuenta con todas las licencias y seguros necesarios para realizar cualquier tipo de trabajo. Para nosotros, ningún trabajo es demasiado grande ni demasiado pequeño. Estamos abiertos a nuevos clientes residenciales, comerciales e industriales.',
-    licenseLabel: 'Licencia Estatal',
+    licenseLabel: 'Licencias Estatales',
     points: [
       'Totalmente licenciados y asegurados',
       'Residencial, comercial e industrial',
@@ -808,7 +887,7 @@ const es = {
     },
     credentials: {
       years: 'Años en el Negocio',
-      license: 'Licencia Estatal',
+      license: 'Totalmente Licenciados',
       area: 'Condados Atendidos',
       areaValue: '3',
     },
@@ -861,7 +940,7 @@ const es = {
     serviceArea: 'Área de Servicio',
     followUs: 'Síganos en Facebook',
     rightsReserved: 'Todos los derechos reservados.',
-    license: 'Licencia #',
+    license: 'Licencias Estatales',
     available: 'Disponibles 24/7',
   },
 }

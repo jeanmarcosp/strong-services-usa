@@ -98,8 +98,9 @@ export default function About() {
             <p className="mt-1 text-sm font-medium uppercase tracking-widest text-navy-500">{about.credentials.years}</p>
           </div>
           <div>
-            <p className="font-display text-4xl font-extrabold text-navy-800">{business.license}</p>
+            <p className="font-display text-4xl font-extrabold text-navy-800">MEP</p>
             <p className="mt-1 text-sm font-medium uppercase tracking-widest text-navy-500">{about.credentials.license}</p>
+            <p className="mt-1 text-xs text-navy-400">{Object.values(business.licenses).join(' · ')}</p>
           </div>
           <div>
             <p className="font-display text-4xl font-extrabold text-navy-800">{about.credentials.areaValue}</p>

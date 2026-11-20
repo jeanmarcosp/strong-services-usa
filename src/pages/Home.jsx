@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react'
 import Hero from '../components/Hero'
 import TrustBar from '../components/TrustBar'
+import TradesSection from '../components/TradesSection'
 import ServiceCard from '../components/ServiceCard'
 import SpecialtiesGrid from '../components/SpecialtiesGrid'
 import YgreneCallout from '../components/YgreneCallout'
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <Hero />
       <TrustBar />
+      <TradesSection />
 
       {/* Intro + Assistance Without Limits */}
       <section className="section">
@@ -101,16 +103,25 @@ export default function Home() {
             </ul>
           </div>
           <div className="flex flex-col gap-6 lg:col-span-3">
-            <div className="flex items-center gap-5 rounded-3xl bg-navy-900 p-8 text-white">
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-500/20 text-green-300">
-                <ShieldCheck className="h-7 w-7" aria-hidden="true" />
-              </span>
-              <div>
+            <div className="rounded-3xl bg-navy-900 p-8 text-white">
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-500/20 text-green-300">
+                  <ShieldCheck className="h-6 w-6" aria-hidden="true" />
+                </span>
                 <p className="text-xs font-semibold uppercase tracking-widest text-navy-300">
                   {credentials.licenseLabel}
                 </p>
-                <p className="font-display text-3xl font-extrabold">{business.license}</p>
               </div>
+              <dl className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+                {Object.entries(business.licenses).map(([type, number]) => (
+                  <div key={type} className="rounded-2xl bg-white/5 p-4">
+                    <dt className="text-xs font-semibold uppercase tracking-widest text-green-300">
+                      {t.licenseTypes[type]}
+                    </dt>
+                    <dd className="mt-1 font-display text-xl font-extrabold">{number}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
             <YgreneCallout heading={ygrene.heading} body={ygrene.body} badge={ygrene.badge} />
           </div>

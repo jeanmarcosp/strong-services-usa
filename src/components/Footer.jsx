@@ -83,10 +83,20 @@ export default function Footer() {
               <li key={c}>{c}</li>
             ))}
           </ul>
-          <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-xs font-semibold text-navy-200">
-            <ShieldCheck className="h-4 w-4 text-green-400" aria-hidden="true" />
-            {t.footer.license} {business.license}
-          </p>
+          <div className="mt-6 inline-flex items-start gap-2.5 rounded-2xl border border-white/10 px-4 py-3 text-xs text-navy-200">
+            <ShieldCheck className="mt-px h-4 w-4 shrink-0 text-green-400" aria-hidden="true" />
+            <div>
+              <p className="font-semibold text-white">{t.footer.license}</p>
+              <dl className="mt-1.5 grid grid-cols-[auto_auto] gap-x-3 gap-y-1">
+                {Object.entries(business.licenses).map(([type, number]) => (
+                  <div key={type} className="contents">
+                    <dt>{t.licenseTypes[type]}</dt>
+                    <dd className="font-semibold">{number}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
         </div>
       </div>
 
